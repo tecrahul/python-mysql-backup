@@ -9,7 +9,7 @@
 # Website: http://tecadmin.net
 # Created date: Dec 03, 2013
 # Last modified: Aug 17, 2018 
-# Tested with : Python 2.7.15
+# Tested with : Python 2.7.15 & Python 3.5
 # Script Revision: 1.4
 #
 ##########################################################
@@ -42,15 +42,15 @@ except:
     os.mkdir(TODAYBACKUPPATH)
 
 # Code for checking if you want to take single database backup or assinged multiple backups in DB_NAME.
-print "checking for databases names file."
+print ("checking for databases names file.")
 if os.path.exists(DB_NAME):
     file1 = open(DB_NAME)
     multi = 1
-    print "Databases file found..."
-    print "Starting backup of all dbs listed in file " + DB_NAME
+    print ("Databases file found...")
+    print ("Starting backup of all dbs listed in file " + DB_NAME)
 else:
-    print "Databases file not found..."
-    print "Starting backup of database " + DB_NAME
+    print ("Databases file not found...")
+    print ("Starting backup of database " + DB_NAME)
     multi = 0
 
 # Starting actual database backup process.
@@ -77,6 +77,6 @@ else:
    gzipcmd = "gzip " + pipes.quote(TODAYBACKUPPATH) + "/" + db + ".sql"
    os.system(gzipcmd)
 
-print ""
-print "Backup script completed"
-print "Your backups have been created in '" + TODAYBACKUPPATH + "' directory"
+print ("")
+print ("Backup script completed")
+print ("Your backups have been created in '" + TODAYBACKUPPATH + "' directory")
