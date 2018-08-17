@@ -22,7 +22,7 @@ import datetime
 import pipes
 
 # MySQL database details to which backup to be done. Make sure below user having enough privileges to take databases backup.
-# To take multiple databases backup, create any file like /backup/dbnames.txt and put databses names one on each line and assignd to DB_NAME variable.
+# To take multiple databases backup, create any file like /backup/dbnames.txt and put databases names one on each line and assigned to DB_NAME variable.
 
 DB_HOST = 'localhost' 
 DB_USER = 'root'
@@ -31,7 +31,7 @@ DB_USER_PASSWORD = '_mysql_user_password_'
 DB_NAME = 'db_name_to_backup'
 BACKUP_PATH = '/backup/dbbackup'
 
-# Getting current datetime to create seprate backup folder like "20180817-123433".
+# Getting current DateTime to create the separate backup folder like "20180817-123433".
 DATETIME = time.strftime('%Y%m%d-%H%M%S')
 TODAYBACKUPPATH = BACKUP_PATH + '/' + DATETIME
 
@@ -79,4 +79,4 @@ else:
 
 print ""
 print "Backup script completed"
-print "Your backups has been created in '" + TODAYBACKUPPATH + "' directory"
+print "Your backups have been created in '" + TODAYBACKUPPATH + "' directory"
