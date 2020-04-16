@@ -39,7 +39,8 @@ TODAYBACKUPPATH = BACKUP_PATH + '/' + DATETIME
 try:
     os.stat(TODAYBACKUPPATH)
 except:
-    os.mkdir(TODAYBACKUPPATH)
+    os.makedirs(TODAYBACKUPPATH) 
+    # makedirs recursive directory creation like mkdir(), but makes all intermediate-level directories needed to contain the leaf directory.
 
 # Code for checking if you want to take single database backup or assinged multiple backups in DB_NAME.
 print ("checking for databases names file.")
